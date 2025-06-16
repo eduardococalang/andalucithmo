@@ -1,0 +1,26 @@
+<div class="contenedor-header">
+    <header class="cabecera">
+      <h1>
+        <p>A n d a l u c í</p><span class="thmo"> - T h m o</span>
+      </h1>
+      
+      <div class="auth">
+        <div Class="inicio-sesion" *ngIf="!isLogged" class="google-login-container">
+            <asl-google-signin-button
+            size= large
+            shape="circle"
+            class="google-login-button"
+            >
+            </asl-google-signin-button> 
+            <p class="mensaje">Inicia sesión </p>
+
+        </div>
+
+        <div Class="cierro-sesion" *ngIf="isLogged" class="user-info">
+          <p class="bienvenida">Bienvenido,</p>
+          <p class="nombre-usuario">   {{ user?.name }}!</p>
+          <button class="btn-cerrar" (click)="signOut()"><img class="btn-cerrar" width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/logout-rounded--v1.png" alt="logout-rounded--v1"/></button>
+        </div>
+    </div>
+    </header>
+  </div>

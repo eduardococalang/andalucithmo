@@ -1,0 +1,37 @@
+@media (max-width: 769px) {
+    .sep {
+        background-color: #eeecec;
+    }
+
+
+    .main-app-component {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .principal {
+        margin: 0;
+        padding: 0;
+        margin-top: 25px;
+        margin-bottom: 60px;
+        justify-items: center;
+        gap: 1px;
+    }
+
+    .principal1 {}
+
+
+
+    .principal2 {
+        justify-items: center;
+    }
+
+    .valor {
+        margin-bottom: 25px;
+        padding: 25px;
+    }
+
+
+}

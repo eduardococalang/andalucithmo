@@ -1,0 +1,39 @@
+
+
+<div *ngIf="isMobileView">
+    <main class="main-app-component">
+        
+     <app-header></app-header>
+       
+        <section class="principal">
+
+            <section class="principal1">
+                <app-word-of-day></app-word-of-day>  
+            </section>
+
+        </section>
+
+      <div class="sep" *ngIf="isLogged">
+            <section class="principal2">
+              <app-ranking></app-ranking>
+            </section>
+        
+            
+            <section class="valor">
+              <app-rating-app></app-rating-app>
+            </section>
+        </div>
+
+        <section class="glosario">
+            <app-favoritos></app-favoritos>
+        </section>
+    </main>
+        <app-footer></app-footer>
+
+</div>
+
+<div *ngIf="!isMobileView">
+  <app-en-construccion></app-en-construccion>
+</div>
+
+

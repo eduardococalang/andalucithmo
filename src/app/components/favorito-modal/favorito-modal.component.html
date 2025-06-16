@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-content>
+      <h2>" {{ data.palabra }} "</h2>
+      <p><strong>Definición:</strong> {{ data.definicion }}</p>
+      <p><strong>Ejemplo:</strong> {{ data.ejemplo }}</p>
+      <p style="font-weight: bold; color: lightsalmon;">
+        "⭐: <strong> {{ contador }} </strong> {{ contador === 1 ? 'vez' : 'veces' }}."  
+      </p>
+    </mat-card-content>
+  
+    <mat-card-actions>
+      <button mat-button  (click)="compartirFavorito()"> <img src="assets/logo-what-small3.png" alt="logo-what"></button>
+      <button mat-button  (click)="cerrar()"> <img src="https://img.icons8.com/?size=25&id=r2m8AyWK0DnH&format=png&color=000000" alt="logo-what"> </button>
+    </mat-card-actions>
+  </mat-card>
+  
