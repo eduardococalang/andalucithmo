@@ -13,21 +13,21 @@ export const glosario: Thmo[] = [
         audioUrl: ""
       },
       {
-        palabra: "Quillo/-a",
-        definicion: "Forma coloquial de decir 'chiquillo' o 'amigo'.",
+        palabra: "Illo/a, Quillo/-a",
+        definicion: "Forma coloquial de decir 'chiquillo' o 'amigo'. ",
         ejemplo: "Quillo !, ¿vienes o qué?",
         audioUrl: ""
     },
     {
         palabra: "Arrecío",
-        definicion: "Sentir mucho frío, estar helado.",
+        definicion: "Sentir mucho frío, estar helado. La 'c' suele pronunciarse como 's'. ",
         ejemplo: "Me he quedao arrecío esta mañana con la rasca que hacía.",
         audioUrl: ""
     },
     {
         palabra: "Malahe",
-        definicion: "Persona que tiene mala actitud o es poco fiable.",
-        ejemplo: "Ten cuidado con ese, es un malahe.",
+        definicion: "Persona que tiene mala actitud o con poco sentido del humor.",
+        ejemplo: " Menudo malahé me atendió ayer ",
         audioUrl: ""
     },
     {
@@ -43,15 +43,15 @@ export const glosario: Thmo[] = [
         audioUrl: ""
     },
     {
-        palabra: "Antie ",
+        palabra: "Antié",
         definicion: "Referirse al día de Antes de ayer",
         ejemplo: "Antie fui a la playa y me quemé.",
         audioUrl: ""
     },
     {
-        palabra: "Saborio/-a",
+        palabra: "Saborío/-a",
         definicion: "Persona con muy mal humor o que es muy seria.",
-        ejemplo: "Eres más saborío que un yogur blanco.",
+        ejemplo: "Eres más saborío que un puchero sin pringá.",
         audioUrl: ""
     },
     {
@@ -115,7 +115,7 @@ export const glosario: Thmo[] = [
         audioUrl: ""
     },
     {
-        palabra: "Apollargao",
+        palabra: "Apollardao",
         definicion: "Atontado",
         ejemplo: "Estás apollardao",
         audioUrl: ""
@@ -388,6 +388,12 @@ export const glosario: Thmo[] = [
         palabra: "Nopahaná",
         definicion: "contracción fonética del andaluz coloquial que significa no pasa nada. Se forma por elisión de sonidos en el habla rápida y relajada, muy común en zonas como Sevilla, Cádiz o Huelva. Se usa para transmitir calma, comprensión o quitarle importancia a un error o incidente",
         ejemplo: "Tranquilo, nopahaná, no te preocupes.",
+        audioUrl: "",
+    },
+    {
+        palabra: "Bajío",
+        definicion: "En Andalucía, bajío se usa en sentido figurado para referirse a una mala racha o situación desfavorable, como cuando alguien “está en el bajío”. En el habla marinera andaluza, también designa zonas poco profundas del mar —como bancos de arena o rocas sumergidas— que suponen un peligro para la navegación. Procede de “bajo” con el sufijo –ío, y es un término muy presente en el lenguaje popular y costero andaluz.",
+        ejemplo: "Últimamente tienes bajío pa tó",
         audioUrl: "",
     },
     

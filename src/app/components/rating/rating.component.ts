@@ -105,7 +105,7 @@ export class RatingAppComponent implements OnInit {
 
   // Método para compartir en WhatsApp
   compartirApp() {
-    const texto = `Recibe un aforismo Andaluz cada día ¡¡ picha aquí para descargar la app: https://2v44zgxz-4200.uks1.devtunnels.ms/`;
+    const texto = `Recibe un aforismo Andaluz cada día ¡¡ picha aquí: https://andalucithmo.com/`;
     const url = `https://wa.me/?text=${encodeURIComponent(texto)}`;
     window.open(url, '_blank');
   }//end compartirEnWhatsApp
