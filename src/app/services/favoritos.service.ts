@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Favorito } from '../models/favorito.model'; // importa el modelo
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -20,9 +21,7 @@ export class FavoritosService {
   
     this.storageKey = newKey;
   
-    const favoritos = email
-      ? JSON.parse(localStorage.getItem(this.storageKey) || '[]')
-      : [];
+    const favoritos = email ? JSON.parse(localStorage.getItem(this.storageKey) || '[]') : [];
   
     this.favoritosSubject.next(favoritos);
   }

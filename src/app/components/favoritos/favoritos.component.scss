@@ -1,4 +1,7 @@
-.favoritos-contenedor {
+
+//mobile first
+@media  (max-width: 750px){
+ .favoritos-contenedor {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -52,4 +55,65 @@
   height: 100%;
   padding: 0;
   margin: 0;
+}
+}
+
+
+//web version 
+@media (min-width: 750px){
+.favoritos-contenedor {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+}
+
+.cabe-fav {
+   display: flex;
+   justify-content: center ;
+   margin-top: -20px;
+  #til {
+    width: 15%;
+  }
+}
+
+
+.favoritos-list {
+  gap: 10px;
+  margin-top: -80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.favorito-card {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  background-color: white;
+  margin-bottom: 2px;
+
+}
+
+.palabra {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.accion-derecha {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 }

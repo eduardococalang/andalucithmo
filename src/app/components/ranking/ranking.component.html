@@ -1,3 +1,4 @@
+<div *ngIf="isMobileView">
 <div class="ite" *ngIf="isLogged">
  <div id="titulo-ranking">
   <img src="../../../assets/ChatGPT Image 2 jun 2025, 23_58_02.png" alt=""> 
@@ -13,4 +14,26 @@
       </ol>
     </mat-card-content>
   </mat-card >
+</div>
+</div>
+
+
+
+<div *ngIf="!isMobileView">
+<div class="ite" *ngIf="isLogged">
+ <div id="titulo-ranking">
+  <img src="../../../assets/ChatGPT Image 2 jun 2025, 23_58_02.png" alt=""> 
+ </div>
+
+
+  <mat-card class="ranking-card" >
+    <mat-card-content class="body-ranking">
+      <ol class="lista-fav">
+        <li *ngFor="let item of ranking" id="layout-card">
+          <strong>{{ item.palabra }}</strong> – {{ item.contador }} ve{{ item.contador !== 1 ? 'ces' : 'z' }}
+        </li>
+      </ol>
+    </mat-card-content>
+  </mat-card >
+</div>
 </div>

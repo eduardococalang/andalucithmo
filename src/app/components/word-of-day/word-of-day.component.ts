@@ -1,5 +1,5 @@
 import { CommonModule, JsonPipe } from '@angular/common';
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { glosario, Thmo } from '../../data/glosario';
 import { FavoritosService } from '../../services/favoritos.service';
 import { MatCardModule } from '@angular/material/card';
@@ -33,7 +33,7 @@ import { MatButtonModule } from '@angular/material/button';
   ]
 
 })
-export class WordOfDayComponent {
+export class WordOfDayComponent implements OnInit{
 
   isAuthenticated = false;
   todayThmo: Thmo;
@@ -43,6 +43,7 @@ export class WordOfDayComponent {
   favoritos: any[] | undefined;
   public palabraActual: Thmo;
   public palabraHoy: any;
+  isMobileView: boolean = false;
 
 
   constructor(
@@ -69,7 +70,15 @@ export class WordOfDayComponent {
       }
     });
 
+    window.addEventListener('resize', () => {
+      this.isMobileView = window.innerWidth <= 750;
+    });
+
   }
+
+  ngOnInit(): void{
+    this.isMobileView = window.innerWidth <= 750;
+  };
 
 
   // Método para obtener la palabra del día

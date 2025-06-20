@@ -22,6 +22,7 @@ export class RankingComponent implements OnInit{
   isLogged: boolean = false;
   ranking: {palabra: string, contador: number }[] = [];
   private rankingSub!:Subscription;
+  isMobileView: boolean = false;
 
   constructor(
     private favoritosFirebaseService: FavoritosFirebaseService,
@@ -31,6 +32,12 @@ export class RankingComponent implements OnInit{
       this.user = user;
       this.isLogged = !!user;
     })
+
+    window.addEventListener('resize', () =>{
+      this.isMobileView = window.innerWidth <= 750
+    });
+
+
   }
 
 
@@ -40,6 +47,8 @@ ngOnInit(): void {
     .subscribe(data => {
       this.ranking = data;
     });
+
+    this.isMobileView = window.innerWidth <= 750;
 }
 
 

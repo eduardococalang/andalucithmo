@@ -1,11 +1,10 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { Favorito } from '../../models/favorito.model';
 import { FavoritosFirebaseService } from '../../services/favoritos-firebase.service';
-import { OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 
@@ -16,17 +15,22 @@ import { Subscription } from 'rxjs';
   templateUrl: './favorito-modal.component.html',
   styleUrls: ['./favorito-modal.component.scss']
 })
-export class FavoritoModalComponent {
+export class FavoritoModalComponent implements OnInit {
   contador: number = 0;
   private contadorSub!: Subscription;
   favoritosFirestore: any;
+  isMobileView: boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<FavoritoModalComponent>,
     @Inject(MAT_DIALOG_DATA)
     public data: Favorito,
     private favoritosFirebaseService: FavoritosFirebaseService
-  ) { }
+  ) { 
+    window.addEventListener('resize', () => {
+      this.isMobileView = window.innerWidth <= 750;
+    });
+  }
 
   // Se ejecuta cuando el componente se inicializa
   ngOnInit() {
@@ -36,7 +40,10 @@ export class FavoritoModalComponent {
       .subscribe((contador: number) => {
         this.contador = contador;
       });
+
+    this.isMobileView = window.innerWidth <= 750;
   }
+  
   // Se ejecuta cuando el componente se destruye
   ngOnDestroy() {
     if (this.contadorSub) {

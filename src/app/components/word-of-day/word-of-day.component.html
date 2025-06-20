@@ -1,4 +1,46 @@
-<mat-card class="word-card">
+<mat-card *ngIf="isMobileView" class="word-card">
+  <mat-card-header class="zona-header">
+    <mat-card-title class="caja-header">
+      <h2 class="titulo-card">" {{ palabraActual.palabra }} "</h2>
+    </mat-card-title>
+  </mat-card-header>
+
+  <div  class="scroll-area" #scrollArea>
+    <mat-card-content class="zona-body">
+      <div mat-card id="layout-card">
+        <p>" <img width="15" height="15" src="https://img.icons8.com/ios/15/hand-right.png"
+            alt="hand-right" /> {{ palabraActual.definicion }}  "</p>
+      </div>
+      <div id="layout-card">
+        <p><span style="font-weight: bold; display: grid; justify-content: center;"> “ {{palabraActual.ejemplo }} ”</span> </p>
+      </div>
+    </mat-card-content>
+  </div>
+
+
+  <mat-card-footer class="zona-footer">
+    <mat-card-actions id="layout-card" class="btn-card">
+      <button id="btn" mat-button (click)="guardarFavorito()" *ngIf="isLogged"><img width="29" height="29"
+          src="https://img.icons8.com/fluency/29/star--v1.png" alt="star--v1" /></button>
+      <button id="btn" mat-button (click)="compartirEnWhatsApp()"><img src="assets/logo-what-small3.png"
+          alt="logo"></button>
+
+      <mat-card-actions *ngIf="isLogged">
+        <button id="btn" mat-button color="primary" (click)="cambiarPalabraAleatoria()">
+         <img width="34" height="29" src="https://img.icons8.com/badges/48/forward.png" alt="forward"/></button>
+        <button id="btn" mat-button *ngIf="palabraActual.palabra !== palabraHoy.palabra" color="accent"
+          (click)="volverPalabraHoy()"><img width="30" height="29" src="https://img.icons8.com/badges/48/u-turn-to-left.png" alt="u-turn-to-left"/></button>
+      </mat-card-actions>
+    </mat-card-actions>
+      <div #sentinelaFinal style="height: 1px;"></div>
+
+  </mat-card-footer>
+</mat-card>
+
+
+
+
+<mat-card *ngIf="!isMobileView" class="word-card">
   <mat-card-header class="zona-header">
     <mat-card-title class="caja-header">
       <h2 class="titulo-card">" {{ palabraActual.palabra }} "</h2>

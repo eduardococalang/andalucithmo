@@ -1,5 +1,5 @@
 //MOBILE
-@media (max-width:768px) { 
+@media (max-width:750px) { 
 
   :host {
     display: block;
@@ -119,5 +119,128 @@
   }
 }
 }
+
+//web version
+@media (min-width:750px) { 
+
+  :host {
+    display: block;
+    animation: fadeIn 1s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .word-card {
+    position: relative;
+    background-color: white ; /* para evitar transparencia */
+    width: 90vw; 
+    height: fit-content; 
+    padding: 0; 
+    margin: 0; 
+    margin-top: 1.5em;
+    box-shadow:10px 10px 2px 2px lightgrey; 
+
+  } 
+
+  #layout-card {  
+    justify-content: center; 
+    width: 90%; 
+    margin: 0; 
+    padding: 0; 
+  } 
+
+  p{
+    margin-top:1vh;
+    margin-left: 2vh;
+    margin-bottom: 20px;
+    font-size: larger;
+
+  }
+
+  .zona-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top:30px solid  #007a33 ;
+    border-bottom:30px solid  #007a33 ;
+    z-index: 10;
+    background-color: white ; /* para evitar transparencia */
+    padding: 1rem;
+    border-radius: 10px 10px 10px 10px;
+    
+  }
+
+  .titulo-card {  
+    font-style: oblique; 
+    padding: 5px;
+  }  
+
+  .caja-header{
+    width: 100%;
+    justify-content: center;
+
+  }
+
+  .zona-body{
+    background-color: white;
+    justify-content: center;
+    font-size: auto;
+    height: fit-content;
+  }
+
+
+
+  .ejemplo-card{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+
+    
+  }
+  .scroll-area{
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  position: relative;
+  height: auto;
+  background-color: white;   
+
+}
+ .scroll-area::-webkit-scrollbar {
+  display: none; 
+
+}
+
+  mat-card-footer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #046434;
+  border-radius: 0 0 10px 10px;
+
+  button{
+    padding: 0;
+    margin: 0;
+  }
+
+  button:hover{
+    background-color: #E40966;
+    
+  }
+}
+}
+
 
 

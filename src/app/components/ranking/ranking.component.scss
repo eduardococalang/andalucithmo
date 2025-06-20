@@ -50,4 +50,57 @@
 
 }
 
+//web version
+@media (min-width:750px) {
+  
+  #titulo-ranking{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+
+    img{
+      width: 10rem;
+      
+    }
+  }
+    .ranking-card {
+    margin-top: 5px;
+    background-color: white;
+    box-shadow:10px 10px 2px 2px lightgrey; 
+  } 
+
+
+  .body-ranking{
+    height: fit-content;
+    width: fit-content;
+    justify-items: center;
+    margin-left: 3rem;
+
+  }
+
+  li{
+    padding-bottom: 0.4rem;
+  }
+  
+
+  :host {    
+    display: block; 
+    animation: fadeIn 1s ease-in; 
+  } 
+
+  @keyframes fadeIn { 
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    } 
+
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    } 
+  } 
+
+}
+
+
 

@@ -41,11 +41,13 @@ export class AppComponent implements OnInit {
     });
 
     window.addEventListener('resize', () => {
-      this.isMobileView = window.innerWidth <= 749;
+      this.isMobileView = window.innerWidth <= 750;
     });
   }
+
+  
    ngOnInit(): void {
-      this.isMobileView = window.innerWidth <= 749;
+      this.isMobileView = window.innerWidth <= 750;
   }
   }
 

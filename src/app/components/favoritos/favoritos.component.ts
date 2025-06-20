@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,7 +10,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { FavoritoModalComponent } from '../favorito-modal/favorito-modal.component';
 import { Favorito } from '../../models/favorito.model';
 import { FavoritosFirebaseService } from '../../services/favoritos-firebase.service';
-import { WordOfDayComponent } from '../word-of-day/word-of-day.component';
 
 @Component({
   selector: 'app-favoritos',
@@ -30,21 +29,26 @@ import { WordOfDayComponent } from '../word-of-day/word-of-day.component';
     ])
   ]
 })
-export class FavoritosComponent {
+export class FavoritosComponent implements OnInit {
   favoritos: Favorito[] = [];
   favoritosKey: string = '';
   isLogged = false;
   userEmail: string | null = null;
   data: any;
-  ;
+  isMobileView: boolean = false;
 
   constructor(
     private snackBar: MatSnackBar,
     private authService: SocialAuthService,
     private favoritosService: FavoritosService,
     private favoritosFirebase: FavoritosFirebaseService,
-    private dialog: MatDialog
-  ) {}// fin constructor
+    private dialog: MatDialog,
+
+  ) {
+    window.addEventListener('resize', () => {
+      this.isMobileView = window.innerWidth <= 750;
+    });
+  }// fin constructor
 
   ngOnInit() {
     // Comprobar si hay usuario autenticado y cargar favoritos
@@ -69,6 +73,11 @@ export class FavoritosComponent {
         this.favoritosKey = '';
       }
     });
+
+      this.isMobileView = window.innerWidth <= 750;
+    
+
+
   } // fin ngOnInit
 
   eliminarFavorito(index: number) {

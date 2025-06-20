@@ -1,3 +1,4 @@
+<div *ngIf="isMobileView">
 <div *ngIf="isLogged">
 <div class="rating-contenedor">
     <h3>Te gusta Andalucí-Thmo ?</h3>
@@ -31,4 +32,43 @@
       <img src="assets/logo-what-small3.png" alt="logo">
     </button>
   </div>
+</div>
+</div>
+
+
+<div *ngIf="!isMobileView">
+<div *ngIf="isLogged">
+<div class="rating-contenedor">
+    <h3>Te gusta Andalucí-Thmo ?</h3>
+    <h4>Valora nuesta app ¡¡</h4>
+
+  <div class="stars">
+      <p-rating
+        [(ngModel)]="value" 
+        [readonly]="hasRated"
+       (click)="valorar(value)" 
+      >
+      </p-rating>
+  </div>
+
+  <div class="rating-contenedor" id="rating">
+      <p *ngIf="votos > 0">
+        Valoración Media Actual: <strong>{{ promedio | number: "1.1-2" }}</strong>  </p>
+      <p>({{ votos }} valoraciones)</p>
+        <br/>
+      <p *ngIf="hasRated">¡Gracias por tu valoración!</p>
+
+      <section *ngIf="rate > 0">
+        <p style="display: flex; justify-content: center; flex-wrap: wrap;">Tu valoración fué de {{rate}} ⭐ </p>
+        <p style="font-weight: bolder; display: flex; justify-content: center; flex-wrap: nowrap;"> GRACIAS </p>
+      </section>
+  </div>
+
+  <div class="rating-contenedor" id="btn-comp-app">
+    <label style="font-weight: bold;" for="btn-comp-app">Ayúdanos, comparte nuestra app</label>
+    <button mat-button (click)="compartirApp()">
+      <img src="assets/logo-what-small3.png" alt="logo">
+    </button>
+  </div>
+</div>
 </div>

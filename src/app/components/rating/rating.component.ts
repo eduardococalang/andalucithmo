@@ -1,8 +1,8 @@
-import { Component,OnInit, Input, Output, EventEmitter, signal } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { collection, doc, getDoc, setDoc, Firestore, onSnapshot } from '@angular/fire/firestore';
-import { getAuth, user } from '@angular/fire/auth';
+import {  doc, getDoc, setDoc, Firestore, onSnapshot } from '@angular/fire/firestore';
+import {  user } from '@angular/fire/auth';
 import { onAuthStateChanged } from 'firebase/auth';
 import { SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 import { FormsModule } from '@angular/forms';
@@ -26,16 +26,23 @@ export class RatingAppComponent implements OnInit {
   user: SocialUser | null = null;
   isLogged: boolean = false;
   hasRated: boolean = false;
+  isMobileView: boolean = false;
 
 
   constructor(
     private firestore: Firestore,
     private authService: SocialAuthService,
-  ) {this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.isLogged = !!user;
-    }); 
-  }
+    ) {
+        this.authService.authState.subscribe((user) => {
+          this.user = user;
+          this.isLogged = !!user;
+        });
+      
+        window.addEventListener('resize', () =>{
+          this.isMobileView = window.innerWidth <= 750;
+        });
+      }
+
 
   ngOnInit() {
     // Escuchar promedio en tiempo real
@@ -63,6 +70,9 @@ export class RatingAppComponent implements OnInit {
     }
   }
  });
+
+ this.isMobileView = window.innerWidth <= 750;
+
 }
 
 

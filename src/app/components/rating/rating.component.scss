@@ -1,4 +1,6 @@
-p-rating {
+//mobile first
+@media (max-width:750px){
+  p-rating {
   --p-rating-icon-size: 1.8rem;
   --p-rating-icon-color: lightgray;
   --p-rating-icon-hover-color: gold;
@@ -37,6 +39,55 @@ p-rating{
   margin-bottom: 15px;
   font-size: 1.2rem;
   color: #e0b000;
+
+}
+
+}
+
+
+//web version
+@media (min-width:750px){
+  p-rating {
+  --p-rating-icon-size: 1.8rem;
+  --p-rating-icon-color: lightgray;
+  --p-rating-icon-hover-color: gold;
+  --p-rating-icon-active-color: orange;
+
+  --p-rating-gap: 0.5rem;
+  --p-rating-transition-duration: 0.3s;
+
+  --p-rating-focus-ring-width: 2px;
+  --p-rating-focus-ring-color: rgba(255, 165, 0, 0.6);
+  --p-rating-focus-ring-style: solid;
+  --p-rating-focus-ring-offset: 2px;
+  --p-rating-focus-ring-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
+}
+
+
+.rating-contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+#btn-comp-app>button {
+  margin-top: 15px;
+  width: 30vw;
+  background-color: #e0b000;
+  border: 1px solid grey;
+ filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+}
+
+p-rating{
+  justify-content: center;
+  width: 30vw;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #e0b000;
+
+}
 
 }
 

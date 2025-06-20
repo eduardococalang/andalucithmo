@@ -7,6 +7,12 @@ export interface Thmo{
 
 export const glosario: Thmo[] = [
     {
+        palabra: "Chusquela, Parné",
+        definicion: "Ambos términos son de origen caló y se refieren al Dinero.",
+        ejemplo: "Necesito una camisa nueva y no hay chusquela",
+        audioUrl: "",
+    },
+    {
         palabra: "Aguijón",
         definicion: "Dificultad para hablar.",
         ejemplo: "Me quedé con el aguijón.",

@@ -1,7 +1,8 @@
-export interface Favorito {
- 
+export interface Favorito { 
     palabra: string;
     definicion: string;
     ejemplo: string;
+
+
   }
   
